@@ -16,18 +16,23 @@ Node::Node(int values[], int numValues)
 
 		if (numValues > 1)
 		{
-			this->next = Node(&values[1], numValues - 1);
+			this->next = new Node(&values[1], numValues - 1);
 		}
 	}
 }
 
+Node::~Node()
+{
+	//delete this->next;
+}
+
 void Node::PrintLinkedList()
 {
-	cout << value << "->";
+	cout << this->value << "->";
 
 	if (this->next != NULL)
 	{
-		this->next.PrintLinkedList();
+		this->next->PrintLinkedList();
 	}
 	else
 	{
@@ -35,30 +40,34 @@ void Node::PrintLinkedList()
 	}
 }
 
-Node Node::DeleteNode(Node node, int value)
+Node* Node::DeleteNode(Node* node, int value)
 {
-//	if (node == NULL)
-//	{
-//		return NULL;
-//	}
+	Node* head = node;
 
-
-	if (node.value == value)
+	if (node == NULL)
 	{
-		return node.next;
+		return NULL;
 	}
 
-	Node head = node;
-	while (node.next != NULL)
+	if (node->value == value)
 	{
-		if (node.next.value == value)
+		head = node->next;
+		delete node;
+		return head;
+	}
+
+	Node* temp = node;
+	while (node->next != NULL)
+	{
+		if (node->next->value == value)
 		{
-			node.next = node.next.next;
+			temp = node->next->next;
+			delete node->next;
+			node->next = temp;
 		}
 
-		node = node.next;
+		node = node->next;
 	}
-
 
 	return head;
 }

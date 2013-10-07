@@ -6,11 +6,12 @@ public:
 
 	Node(int value=0);
 	Node(int values[], int numValues);
+	~Node();
 
-	Node next;
+	Node* next;
 	int value;
 
 	void PrintLinkedList();
 
-	static Node DeleteNode(Node head, int value);
+	static Node* DeleteNode(Node* head, int value);
 };
