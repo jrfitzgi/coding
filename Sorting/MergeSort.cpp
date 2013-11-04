@@ -13,68 +13,74 @@ void printIntArray(int a[], int length)
 }
 
 
-int* MergeSort(int a[], int b[], int start, int end)
+void MergeSort(int a[], int b[], int start, int end)
 {
 	cout << "Called mergesort with start and end as " << start << " " << end << endl;
 
 	if (a == NULL || start > end || start == end)
 	{
-		cout << "Base case, returning address of " << a[start] << endl;
-
-		// Base case: There are 0 or 1 elements
-		return &a[start];
+		cout << "Base case for element [" << start << "]=" << a[start] << endl;
+		return;
 	}
 
-	int middle = (end-start)/2;
+	int middle = start + (end-start)/2;
 	cout << "Middle of " << start << " and " << end << " is " << middle << endl;
 
-	cout << "Calling into mergesort... " << endl;
-	int* left = MergeSort(a, b, start, middle);
-	int* right = MergeSort(a, b, middle+1, end);
+	cout << "Calling Mergesort on left " << start << "-" << middle << " and right " << middle+1 << "-" << end << endl;
+	MergeSort(a, b, start, middle);
+	MergeSort(a, b, middle+1, end);
 
 	// merge left and right
-	int leftIndex = 0;
-	int rightIndex = 0;
+	int leftIndex = start;
+	int rightIndex = middle+1;
 
-	cout << "Merging. Start and End are " << start << " " << end << endl;
+	cout << "Merging on left " << start << "-" << middle << " and right " << middle+1 << "-" << end << endl;
+
 	for (int i=start; i <= end; i++)
 	{
-		if (leftIndex > middle - start)
+		if (leftIndex > middle)
 		{
 			// no more items in left
-			cout << "No items remain in left. Adding right's " << right[rightIndex] << endl;
-			b[i] = right[rightIndex];
+			cout << "No items remain in left. Adding right's " << a[rightIndex] << endl;
+			b[i] = a[rightIndex];
+			rightIndex++;
 		}
-		else if (rightIndex > end - middle)
+		else if (rightIndex > end)
 		{
 			// no more items in right
-			cout << "No items remain in right. Adding left's " << left[leftIndex] << endl;
-			b[i] = left[leftIndex];
+			cout << "No items remain in right. Adding left's " << a[leftIndex] << endl;
+			b[i] = a[leftIndex];
+			leftIndex++;
 		}
-		else if (left[leftIndex] <= right[rightIndex])
+		else if (a[leftIndex] <= a[rightIndex])
 		{
-			cout << "Adding left's" << left[leftIndex] << endl;
-			b[i] = left[leftIndex];
+			cout << "Adding left's" << a[leftIndex] << endl;
+			b[i] = a[leftIndex];
 			leftIndex++;
 		}
 		else
 		{
-			cout << "Adding rights's" << right[rightIndex] << endl;
-			b[i] = right[rightIndex];
+			cout << "Adding right's " << a[rightIndex] << endl;
+			b[i] = a[rightIndex];
 			rightIndex++;
 		}
 
 	}
 
-	cout << "Return b ";
-	printIntArray(b, end-start+1);
-	
-	return b;
+	// Copy b back into a
+	cout << "Copying b back into a" << endl;
+	for (int i=start; i <= end; i++)
+	{
+		a[i] = b[i];
+	}
+
+	cout << "a now looks like this ";
+	printIntArray(a, end-start+1);
+
 }
 
-int* MergeSort(int a[], int b[], const int length)
+void MergeSort(int a[], int b[], const int length)
 {
-	int* result = MergeSort(a, b, 0, length-1);
-	return result;
+	MergeSort(a, b, 0, length-1);
 }
 

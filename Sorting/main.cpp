@@ -2,23 +2,24 @@
 
 using namespace std;
 
-int* MergeSort(int a[], int b[], const int length);
+void MergeSort(int a[], int b[], const int length);
 void printIntArray(int a[], int length);
 
 int main()
 {
-	//const int length = 8;
-	//int a[] = {5, 2, 1, 4, 99, 3, 10, 20};
-	//int b[length];
-
-	const int length = 2;
-	int a[] = {5, 2};
+	const int length = 8;
+	int a[] = {5, 2, 1, 3, 99, 3, 10, 20};
 	int b[length];
+
+	//const int length = 7;
+	//int a[] = {4, 3, 2, 1, 6, 5, 7};
+	//int b[length];
 
 	printIntArray(a, length);
 
-	int* sortedArray = MergeSort(a, b, length);
-	printIntArray(sortedArray, length);
+	MergeSort(a, b, length);
+	cout << "DONE" << endl;
+	printIntArray(a, length);
 
 	system("pause");
 }
