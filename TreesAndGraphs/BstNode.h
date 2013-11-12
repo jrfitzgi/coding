@@ -11,7 +11,11 @@ public:
 
 	static BstNode* ConstructBst();
 
-	void PreOrderPrint();
-	void InOrderPrint();
-	void PostOrderPrint();
+	static void PreOrderPrint(BstNode* node);
+	static void InOrderPrint(BstNode* node);
+	static void PostOrderPrint(BstNode* node);
+
+	static void LevelOrderPrintFlat(BstNode* node);
+	static void LevelOrderPrintLines(BstNode* node);
+
 };

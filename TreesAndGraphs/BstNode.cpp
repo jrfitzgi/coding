@@ -27,52 +27,53 @@ BstNode* BstNode::ConstructBst()
 	//in:   4,2,5,1,3
 	//post: 4,5,2,3,1
 
+	//level:1,2,3,4,5
+
 	return root;
 }
 
-void BstNode::PreOrderPrint()
+void BstNode::PreOrderPrint(BstNode* node)
 {
-	cout << this->value << endl;
-
-	if (this->left != NULL)
+	if (NULL == node)
 	{
-		this->left->PreOrderPrint();
+		return;
 	}
 
-	if (this->right != NULL)
-	{
-		this->right->PreOrderPrint();
-	}
+	cout << node->value << endl;
+	BstNode::PreOrderPrint(node->left);
+	BstNode::PreOrderPrint(node->right);
 }
 
-void BstNode::InOrderPrint()
+void BstNode::InOrderPrint(BstNode* node)
 {
-	if (this->left != NULL)
+	if (NULL == node)
 	{
-		this->left->InOrderPrint();
+		return;
 	}
 
-	cout << this->value << endl;
-
-	if (this->right != NULL)
-	{
-		this->right->InOrderPrint();
-	}
+	InOrderPrint(node->left);
+	cout << node->value << endl;
+	InOrderPrint(node->right);
 }
 
-void BstNode::PostOrderPrint()
+void BstNode::PostOrderPrint(BstNode* node)
 {
-	if (this->left != NULL)
+	if (NULL == node)
 	{
-		this->left->PostOrderPrint();
+		return;
 	}
 
-	if (this->right != NULL)
-	{
-		this->right->PostOrderPrint
-			();
-	}
-
-	cout << this->value << endl;
+	BstNode::PostOrderPrint(node->left);
+	BstNode::PostOrderPrint(node->right);
+	cout << node->value << endl;
 }
+
+void BstNode::LevelOrderPrintFlat(BstNode* node)
+{
+
+
+}
+
+void BstNode::LevelOrderPrintLines(BstNode* node)
+{}
 

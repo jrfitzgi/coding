@@ -7,14 +7,21 @@ int main(int argc, char** argv)
 {
 	BstNode* root = BstNode::ConstructBst();
 
-	cout << "PreOrder" << endl;
-	root->PreOrderPrint();
+	cout << endl << "PreOrder" << endl;
+	BstNode::PreOrderPrint(root);
 
-	cout << "InOrder" << endl;
-	root->InOrderPrint();
+	cout << endl << "InOrder" << endl;
+	BstNode::InOrderPrint(root);
 
-	cout << "PostOrder" << endl;
-	root->PostOrderPrint();
+	cout << endl << "PostOrder" << endl;
+	BstNode::PostOrderPrint(root);
+
+	cout << endl << "LevelOrderFlat" << endl;;
+	BstNode::LevelOrderPrintFlat(root);
+
+	cout << endl << "LevelOrderLines" << endl;;
+	BstNode::LevelOrderPrintLines(root);
+
 
 	system("PAUSE");
 }
