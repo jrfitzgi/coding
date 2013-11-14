@@ -1,3 +1,5 @@
+using namespace std;
+
 class BstNode
 {
 public:
@@ -15,7 +17,9 @@ public:
 	static void InOrderPrint(BstNode* node);
 	static void PostOrderPrint(BstNode* node);
 
+	static void LevelOrderPrintLines_TwoQueues(BstNode* node);
+	static void LevelOrderPrintLines_TwoCounters(BstNode* node);
+	static void LevelOrderPrintLines_Markers(BstNode* node);
 	static void LevelOrderPrintFlat(BstNode* node);
-	static void LevelOrderPrintLines(BstNode* node);
 
 };
