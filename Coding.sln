@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sorting", "Sorting\Sorting.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TreesAndGraphs", "TreesAndGraphs\TreesAndGraphs.vcxproj", "{84BA77C6-33FE-47F0-AF86-A51D1401093A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StacksAndQueues", "StacksAndQueues\StacksAndQueues.vcxproj", "{A676FBB0-4378-44DB-86BD-8475D7ADD067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,6 +45,10 @@ Global
 		{84BA77C6-33FE-47F0-AF86-A51D1401093A}.Debug|Win32.Build.0 = Debug|Win32
 		{84BA77C6-33FE-47F0-AF86-A51D1401093A}.Release|Win32.ActiveCfg = Release|Win32
 		{84BA77C6-33FE-47F0-AF86-A51D1401093A}.Release|Win32.Build.0 = Release|Win32
+		{A676FBB0-4378-44DB-86BD-8475D7ADD067}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A676FBB0-4378-44DB-86BD-8475D7ADD067}.Debug|Win32.Build.0 = Debug|Win32
+		{A676FBB0-4378-44DB-86BD-8475D7ADD067}.Release|Win32.ActiveCfg = Release|Win32
+		{A676FBB0-4378-44DB-86BD-8475D7ADD067}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
