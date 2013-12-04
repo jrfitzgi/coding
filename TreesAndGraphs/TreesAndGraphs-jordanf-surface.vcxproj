@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84BA77C6-33FE-47F0-AF86-A51D1401093A}</ProjectGuid>
+    <ProjectGuid>{F96DB872-E96B-4A0A-AB65-1A06B41647B8}</ProjectGuid>
     <RootNamespace>TreesAndGraphs</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -64,13 +64,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BstNode.cpp" />
-    <ClCompile Include="BtNode.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\LinkedList\main.cpp" />
+    <ClCompile Include="..\LinkedList\BstNode.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BstNode.h" />
-    <ClInclude Include="BtNode.h" />
+    <ClInclude Include="..\LinkedList\BstNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

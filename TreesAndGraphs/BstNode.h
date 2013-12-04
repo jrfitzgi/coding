@@ -1,25 +1,16 @@
+#include "BtNode.h"
+
 using namespace std;
 
-class BstNode
+class BstNode : BtNode
 {
 public:
 
 	BstNode(int value=0);
 	~BstNode();
 
-	BstNode* left;
-	BstNode* right;
-	int value;
+	void Insert(BstNode* root, BstNode* node);
 
-	static BstNode* ConstructBst();
-
-	static void PreOrderPrint(BstNode* node);
-	static void InOrderPrint(BstNode* node);
-	static void PostOrderPrint(BstNode* node);
-
-	static void LevelOrderPrintLines_TwoQueues(BstNode* node);
-	static void LevelOrderPrintLines_TwoCounters(BstNode* node);
-	static void LevelOrderPrintLines_Markers(BstNode* node);
-	static void LevelOrderPrintFlat(BstNode* node);
+	static BtNode* ConstructBst();
 
 };

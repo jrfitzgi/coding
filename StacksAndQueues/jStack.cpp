@@ -11,8 +11,7 @@ jStack::jStack()
 
 void jStack::push(int value)
 {
-	jNode* newTop = new jNode();
-	newTop->value = value;
+	jNode* newTop = new jNode(value);
 	newTop->next = this->topNode;
 	this->topNode = newTop;
 }

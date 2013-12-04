@@ -1,32 +1,32 @@
 #include <iostream>
-#include "BstNode.h"
+#include "BtNode.h"
 
 using namespace std;
 
 int main(int argc, char** argv)
 {
-	BstNode* root = BstNode::ConstructBst();
+	BtNode* root = BtNode::ConstructBt();
 
 	cout << endl << "PreOrder" << endl;
-	BstNode::PreOrderPrint(root);
+	BtNode::PreOrderPrint(root);
 
 	cout << endl << "InOrder" << endl;
-	BstNode::InOrderPrint(root);
+	BtNode::InOrderPrint(root);
 
 	cout << endl << "PostOrder" << endl;
-	BstNode::PostOrderPrint(root);
+	BtNode::PostOrderPrint(root);
 
 	cout << endl << "LevelOrderPrintLines_TwoQueues" << endl;;
-	BstNode::LevelOrderPrintLines_TwoQueues(root);
+	BtNode::LevelOrderPrintLines_TwoQueues(root);
 
 	cout << endl << "LevelOrderPrintLines_TwoCounters" << endl;;
-	BstNode::LevelOrderPrintLines_TwoCounters(root);
+	BtNode::LevelOrderPrintLines_TwoCounters(root);
 
 	cout << endl << "LevelOrderPrintLines_Markers" << endl;;
-	BstNode::LevelOrderPrintLines_Markers(root);
+	BtNode::LevelOrderPrintLines_Markers(root);
 
 	cout << endl << "LevelOrderFlat" << endl;;
-	BstNode::LevelOrderPrintFlat(root);
+	BtNode::LevelOrderPrintFlat(root);
 
 	cout << endl;
 	system("PAUSE");

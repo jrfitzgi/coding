@@ -64,11 +64,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="jNode.cpp" />
+    <ClCompile Include="jQueue.cpp" />
     <ClCompile Include="jStack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jNode.h" />
+    <ClInclude Include="jQueue.h" />
     <ClInclude Include="jStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
