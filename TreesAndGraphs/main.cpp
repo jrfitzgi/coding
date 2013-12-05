@@ -1,9 +1,28 @@
 #include <iostream>
 #include "BtNode.h"
+#include "BstNode.h"
 
 using namespace std;
 
+void TestBt();
+void TestBst();
+
 int main(int argc, char** argv)
+{
+	TestBst();
+	system("PAUSE");
+}
+
+void TestBst()
+{
+	BstNode* root = BstNode::ConstructBst();
+
+	cout << endl << "InOrder" << endl;
+	BtNode::InOrderPrint((BtNode*)root);
+
+}
+
+void TestBt()
 {
 	BtNode* root = BtNode::ConstructBt();
 
@@ -29,5 +48,4 @@ int main(int argc, char** argv)
 	BtNode::LevelOrderPrintFlat(root);
 
 	cout << endl;
-	system("PAUSE");
 }

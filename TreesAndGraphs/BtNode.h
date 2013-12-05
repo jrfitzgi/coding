@@ -1,4 +1,8 @@
+#ifndef BTNODE_H
+#define BTNODE_H
+
 using namespace std;
+
 
 class BtNode
 {
@@ -23,3 +27,5 @@ public:
 	static void LevelOrderPrintFlat(BtNode* node);
 
 };
+
+#endif

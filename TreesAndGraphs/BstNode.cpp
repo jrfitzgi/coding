@@ -15,18 +15,55 @@ BstNode::~BstNode()
 	delete this->right;
 }
 
-void BstNode::Insert(BstNode* root, BstNode* node)
+void BstNode::Insert(BstNode* node)
 {
-	
+	if (NULL == node)
+	{
+		return;
+	}
+
+	if (node->value < this->value)
+	{
+		if (NULL == this->left)
+		{
+			this->left = node;
+		}
+		else
+		{
+			this->left->Insert(node);
+		}
+	}
+	else //(node->value >= this->value)
+	{
+		if (NULL == this->right)
+		{
+			this->right = node;
+		}
+		else
+		{
+			this->right->Insert(node);
+		}
+	}
 }
 
 BstNode* BstNode::ConstructBst()
 {
-	BstNode* root = new BstNode(1);
-	root->left = new BstNode(2);
-	root->right = new BstNode(3);
-	root->left->left = new BstNode(4);
-	root->left->right = new BstNode(5);
+	BstNode* root = new BstNode(3);
+	root->Insert(new BstNode(1));
+	root->Insert(new BstNode(2));
+	root->Insert(new BstNode(4));
+	root->Insert(new BstNode(5));
 	return root;
 }
 
+void BstNode::InOrderPrint(BstNode* node)
+{
+	if (NULL == node)
+	{
+		return;
+	}
+
+	InOrderPrint(node->left);
+	cout << node->value << endl;
+	InOrderPrint(node->right);
+}

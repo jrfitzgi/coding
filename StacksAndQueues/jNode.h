@@ -1,7 +1,7 @@
-using namespace std;
-
 #ifndef JNODE_H
 #define JNODE_H
+
+using namespace std;
 
 class jNode
 {

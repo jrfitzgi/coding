@@ -2,15 +2,19 @@
 
 using namespace std;
 
-class BstNode : BtNode
+class BstNode //: BtNode
 {
 public:
 
 	BstNode(int value=0);
 	~BstNode();
 
-	void Insert(BstNode* root, BstNode* node);
+	BstNode* left;
+	BstNode* right;
+	int value;
 
-	static BtNode* ConstructBst();
+	void Insert(BstNode* node);
+	static BstNode* ConstructBst();
+	static void InOrderPrint(BstNode* node);
 
 };
