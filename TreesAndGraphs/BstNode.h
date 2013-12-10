@@ -13,8 +13,13 @@ public:
 	BstNode* right;
 	int value;
 
+	int GetDepth();
+	int GetNodeCount();
 	void Insert(BstNode* node);
-	static BstNode* ConstructBst();
-	static void InOrderPrint(BstNode* node);
 
+	static BstNode* ConstructBalancedBst();
+	static BstNode* ConstructOneLevelImbalanceBst();
+	static BstNode* ConstructTwoLevelImbalanceBst();
+	static void InOrderPrint(BstNode* node);
+	static bool IsBalanced(BstNode* root);
 };
