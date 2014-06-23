@@ -6,11 +6,45 @@ using namespace std;
 
 void TestBt();
 void TestBst();
+void TestIsBst();
 
 int main(int argc, char** argv)
 {
-	TestBst();
+	TestIsBst();
 	system("PAUSE");
+}
+
+void TestIsBst()
+{
+	BstNode* root1 = BstNode::ConstructInvalidBst();
+	cout << endl << "InOrder" << endl;
+	BtNode::InOrderPrint((BtNode*)root1);
+
+	int PINF = 100;
+	int NINF = -100;
+
+	if (BstNode::IsBst(root1, NINF, PINF)  == true)
+	{
+		cout << "Is BST" << endl;
+	}
+	else
+	{
+		cout << "Is Not BST" << endl;
+	}
+
+		//cout << endl;
+		//cout << "Depth: " << root1->GetDepth() << endl;
+		//cout << "Nodes: " << root1->GetNodeCount() << endl;
+
+		//if (BstNode::IsBalanced(root1))
+		//{
+		//	cout << "Tree is balanced" << endl;
+		//}
+		//else
+		//{
+		//	cout << "Tree is not balanced" << endl;
+		//}
+
 }
 
 void TestBst()

@@ -1,4 +1,5 @@
 #include <iostream>
+//#include <algorithm>
 #include <math.h>
 #include <queue>
 #include "BstNode.h"
@@ -58,6 +59,23 @@ BstNode* BstNode::ConstructBalancedBst()
 	return root;
 }
 
+BstNode* BstNode::ConstructInvalidBst()
+{
+	BstNode* root = new BstNode(10);
+	root->Insert(new BstNode(5));
+	root->Insert(new BstNode(2));
+	root->Insert(new BstNode(8));
+	root->Insert(new BstNode(15));
+	root->Insert(new BstNode(12));
+	root->Insert(new BstNode(18));
+
+	// Invalid nodes
+	root->left->right->left = new BstNode(1);
+	root->left->right->right = new BstNode(11);
+
+	return root;
+}
+
 BstNode* BstNode::ConstructOneLevelImbalanceBst()
 {
 	BstNode* root = new BstNode(4);
@@ -77,6 +95,25 @@ BstNode* BstNode::ConstructTwoLevelImbalanceBst()
 	root->Insert(new BstNode(3));
 	root->Insert(new BstNode(5));
 	return root;
+}
+
+bool BstNode::IsBst(BstNode* root, int min, int max)
+{
+	if (NULL == root)
+	{
+		return true;
+	}
+
+	if (root->value < min || root->value > max)
+	{
+		cout << "Bst check failed at node " << root->value << endl;
+		return false;
+	}
+
+	int rightMin = std::max(root->value, min);
+	int leftMax = std::min(root->value, max);
+
+	return BstNode::IsBst(root->left, min, leftMax) && BstNode::IsBst(root->right, rightMin, max);
 }
 
 bool BstNode::IsBalanced(BstNode* root)
