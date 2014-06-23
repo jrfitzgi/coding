@@ -62,6 +62,8 @@ BstNode* BstNode::ConstructBalancedBst()
 BstNode* BstNode::ConstructInvalidBst()
 {
 	BstNode* root = new BstNode(10);
+	//root->left = new BstNode(10); // invalid
+	root->Insert(new BstNode(10));
 	root->Insert(new BstNode(5));
 	root->Insert(new BstNode(2));
 	root->Insert(new BstNode(8));
@@ -70,7 +72,7 @@ BstNode* BstNode::ConstructInvalidBst()
 	root->Insert(new BstNode(18));
 
 	// Invalid nodes
-	root->left->right->left = new BstNode(1);
+	//root->left->right->left = new BstNode(1);
 	root->left->right->right = new BstNode(11);
 
 	return root;
@@ -104,8 +106,11 @@ bool BstNode::IsBst(BstNode* root, int min, int max)
 		return true;
 	}
 
-	if (root->value < min || root->value > max)
+	if (root->value >= min && root->value < max)
 	{
+		// do nothing
+	}
+	else {
 		cout << "Bst check failed at node " << root->value << endl;
 		return false;
 	}
