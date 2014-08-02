@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include "mGraph.h"
+#include "aGraph.h"
 
 using namespace std;
 
@@ -78,7 +79,7 @@ void BFS(mGraph g, int startNode)
 	}
 }
 
-int main(int argc, char** argv)
+void mGraphTest()
 {
 	mGraph g = mGraph();
 
@@ -105,6 +106,45 @@ int main(int argc, char** argv)
 
 	//DFS(g, 0);
 	BFS(g, 0);
+}
+
+void aGraphTest()
+{
+	aGraph g = aGraph(5);
+	g.AddVertex(0,0);
+	g.AddVertex(1,10);
+	g.AddVertex(2,20);
+	g.AddVertex(3,30);
+	g.AddVertex(4,40);
+
+	g.vertices[0]->AddAjacentVertex(g.vertices[1]);
+	g.vertices[1]->AddAjacentVertex(g.vertices[0]);
+
+	g.vertices[0]->AddAjacentVertex(g.vertices[4]);
+	g.vertices[4]->AddAjacentVertex(g.vertices[0]);
+
+	g.vertices[1]->AddAjacentVertex(g.vertices[3]);
+	g.vertices[3]->AddAjacentVertex(g.vertices[1]);
+
+	g.vertices[1]->AddAjacentVertex(g.vertices[2]);
+	g.vertices[2]->AddAjacentVertex(g.vertices[1]);
+
+	g.vertices[2]->AddAjacentVertex(g.vertices[3]);
+	g.vertices[3]->AddAjacentVertex(g.vertices[2]);
+
+	g.vertices[1]->AddAjacentVertex(g.vertices[4]);
+	g.vertices[4]->AddAjacentVertex(g.vertices[1]);
+
+	g.vertices[3]->AddAjacentVertex(g.vertices[4]);
+	g.vertices[4]->AddAjacentVertex(g.vertices[3]);
+
+	g.BFS();
+	//g.DFS();
+}
+
+int main(int argc, char** argv)
+{
+	aGraphTest();
 
 	system("PAUSE");
 }

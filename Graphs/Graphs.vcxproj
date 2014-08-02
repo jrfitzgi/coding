@@ -64,11 +64,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="aGraph.h" />
+    <ClInclude Include="Edge.h" />
     <ClInclude Include="mGraph.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aGraph.cpp" />
+    <ClCompile Include="Edge.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mGraph.cpp" />
+    <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StacksAndQueues\StacksAndQueues.vcxproj">
