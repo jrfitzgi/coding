@@ -11,9 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84BA77C6-33FE-47F0-AF86-A51D1401093A}</ProjectGuid>
-    <RootNamespace>TreesAndGraphs</RootNamespace>
-    <ProjectName>Trees</ProjectName>
+    <ProjectGuid>{F94DE1DA-87FC-4071-9C26-662383C5F444}</ProjectGuid>
+    <RootNamespace>Graphs</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -65,13 +64,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BstNode.cpp" />
-    <ClCompile Include="BtNode.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="aGraph.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="mGraph.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BstNode.h" />
-    <ClInclude Include="BtNode.h" />
+    <ClCompile Include="aGraph.cpp" />
+    <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mGraph.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StacksAndQueues\StacksAndQueues.vcxproj">
+      <Project>{a676fbb0-4378-44db-86bd-8475d7add067}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
